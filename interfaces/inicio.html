@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a Muebles Modernos - Inicio</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Enlace al archivo CSS de Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+      $(document).ready(function() {
+          $("#header").load("header.html");
+          $("#footer").load("footer.html");
+      });
+    </script>
+</head>
+<body>
+
+<include src="header.html"></include>
+
+<div class="presentacion">
+    <h1>¡BIENVENIDO/A!</h1>
+    <h5>Muebles a medida Bifu</h5>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="/img/1.jpeg" alt="Imagen 1" class="img-fluid imagen-marco">
+        </div>
+        <div class="col-md-4">
+            <img src="/img/2.jpeg" alt="Imagen 2" class="img-fluid imagen-marco">
+        </div>
+        <div class="col-md-4">
+            <img src="/img/3.jpeg" alt="Imagen 3" class="img-fluid imagen-marco">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="/img/4.jpeg" alt="Imagen 4" class="img-fluid imagen-marco">
+        </div>
+        <div class="col-md-4">
+            <img src="/img/5.jpeg" alt="Imagen 5" class="img-fluid imagen-marco">
+        </div>
+        <div class="col-md-4">
+            <img src="/img/6.jpeg" alt="Imagen 6" class="img-fluid imagen-marco">
+        </div>
+    </div>
+</div>
+
+<include src="footer.html"></include>
+
+<!-- Enlace al archivo JavaScript de Bootstrap (opcional, para ciertas funcionalidades) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

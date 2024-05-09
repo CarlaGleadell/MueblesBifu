@@ -1,0 +1,48 @@
+.presentacion {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+.presentacion h1 {
+    color: #333;
+    font-size: 36px;
+}
+
+.presentacion p {
+    color: #666;
+    font-size: 18px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #808080; 
+    color: white; 
+    text-align: center;
+    padding: 10px;
+}
+
+.logo-img {
+    max-height: 60px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3px; 
+}
+
+.imagen-marco {
+    border: 5px solid #8B4513; 
+    padding: 5px;
+    margin: 10px; 
+}
+
+.custom-form {
+    max-width: 400px;
+    margin: auto;
+}
