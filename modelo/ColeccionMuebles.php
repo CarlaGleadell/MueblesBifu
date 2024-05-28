@@ -10,12 +10,10 @@ class ColeccionMuebles extends BDColeccionGenerica{
         parent::__construct();
         $this->setColeccion("mueble","Mueble");
         $this->mueble = $this->coleccion;
+
+        
     }
     
-     /**
-     * 
-     * @return array()
-     */
     function getMuebles() {
         return $this->mueble;
     }

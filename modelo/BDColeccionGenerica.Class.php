@@ -13,6 +13,7 @@ class BDColeccionGenerica extends BDModeloGenerico {
     function setColeccion($tablaBD_, $nombreClase) {
         $this->query = "SELECT * FROM {$tablaBD_}";
         $this->datos = BDConexion::getInstancia()->query($this->query);
+        
         for ($x = 0; $x < $this->datos->num_rows; $x++) {
             $this->addElemento($this->datos->fetch_object($nombreClase));
         }

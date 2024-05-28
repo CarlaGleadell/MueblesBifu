@@ -11,14 +11,6 @@ class Mueble extends BDObjetoGenerico{
         parent::__construct($id, "Mueble");
     }
 
-    function getId() {
-        return $this->id;
-    }
-
-    function setId($id) {
-        $this->id = $id;
-    }
-
     function getAncho() {
         return $this->ancho;
     }

@@ -11,7 +11,7 @@ BDConexion::getInstancia()->begin_transaction();
         <link rel="stylesheet" href="../lib/open-iconic-master/font/css/open-iconic-bootstrap.css" />
         <script type="text/javascript" src="../lib/JQuery/jquery-3.3.1.js"></script>
         <script type="text/javascript" src="../lib/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
-        <title><?= Constantes::NOMBRE_SISTEMA; ?> - Cargar mueble</title>
+        <title> Cargar mueble</title>
         
 <?php 
     

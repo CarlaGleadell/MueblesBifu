@@ -7,12 +7,13 @@ $Muebles = new ColeccionMuebles();
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../lib/bootstrap-4.1.1-dist/css/bootstrap.css" />
         <link rel="stylesheet" href="../lib/open-iconic-master/font/css/open-iconic-bootstrap.css" />
+        <link rel="stylesheet" href="../css/styles.css">
         <script type="text/javascript" src="../lib/JQuery/jquery-3.3.1.js"></script>
         <script type="text/javascript" src="../lib/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
-        <title><?= Constantes::NOMBRE_SISTEMA; ?> - Cargar Mueble</title>
+        <title> Cargar Mueble</title>
     </head>
     <body>
-        <?php include_once '../gui/header.php'; ?>
+        <?php include_once '../gui/header.html'; ?>
         <div class="container">
             <form action="muebles.crear.procesar.php" method="post" enctype="multipart/form-data">
                 <div class="card">
@@ -46,6 +47,6 @@ $Muebles = new ColeccionMuebles();
                 </div>
             </form>
         </div>
-        <?php include_once '../gui/footer.php'; ?>
+        <?php include_once '../gui/footer.html'; ?>
     </body>
 </html>
