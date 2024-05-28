@@ -19,7 +19,7 @@ BDConexion::getInstancia()->begin_transaction();
 <?php
 $medida = $DatosFormulario["ancho"] * $DatosFormulario["largo"];
 $query = "UPDATE mueblesbifu.mueble 
-SET ancho = '{$DatosFormulario["ancho"]}', largo = '{$DatosFormulario["largo"]}',  medida = '$medida' WHERE id = {$idMueble} 
+SET ancho = '{$DatosFormulario["ancho"]}', largo = '{$DatosFormulario["largo"]}',  medida = '$medida'  
 WHERE id = {$idMueble}";
 $consulta = BDConexion::getInstancia()->query($query);
 if (!$consulta) {

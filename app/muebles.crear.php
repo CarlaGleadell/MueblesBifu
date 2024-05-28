@@ -31,7 +31,6 @@ $Muebles = new ColeccionMuebles();
                             <input type="text" name="largo" class="form-control" id="inputLargo" placeholder="Ingrese el largo del mueble" required="">
                         </div> 
                     </div>
-                    <input type="hidden" name="id" class="form-control" id="id" value="<?= $Mueble->getId(); ?>" >
                     <div class="card-footer" style="display: flex; justify-content: space-between;">
                         <div style="display:flex;">
                             <button type="submit" class="btn btn-outline-success" style="margin-right: 10px;">
