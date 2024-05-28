@@ -9,22 +9,22 @@ BDConexion::getInstancia()->begin_transaction();
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../lib/bootstrap-4.1.1-dist/css/bootstrap.css" />
         <link rel="stylesheet" href="../lib/open-iconic-master/font/css/open-iconic-bootstrap.css" />
+        <link rel="stylesheet" href="../css/styles.css">
         <script type="text/javascript" src="../lib/JQuery/jquery-3.3.1.js"></script>
         <script type="text/javascript" src="../lib/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
         <title> Cargar mueble</title>
         
 <?php 
-    
-    $query = "INSERT INTO muebles (id, ancho, largo, medida)"
-            . "VALUES ( null,
+    $medida = $DatosFormulario["ancho"] * $DatosFormulario["largo"];
+    $query = "INSERT INTO mueble (ancho, largo, medida)"
+            . "VALUES (
             '{$DatosFormulario["ancho"]}',
             '{$DatosFormulario["largo"]}',
-            null)";
+            $medida)";
     $consulta = BDConexion::getInstancia()->query($query);
 
     if (!$consulta) {
         BDConexion::getInstancia()->rollback();
-        //arrojar una excepcion
         die(BDConexion::getInstancia()->errno);
     }
 
@@ -38,12 +38,13 @@ BDConexion::getInstancia()->begin_transaction();
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../lib/bootstrap-4.1.1-dist/css/bootstrap.css" />
         <link rel="stylesheet" href="../lib/open-iconic-master/font/css/open-iconic-bootstrap.css" />
+        <link rel="stylesheet" href="../css/styles.css">
         <script type="text/javascript" src="../lib/JQuery/jquery-3.3.1.js"></script>
         <script type="text/javascript" src="../lib/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
-        <title><?= Constantes::NOMBRE_SISTEMA; ?> - Cargar mueble</title>
+        <title>Cargar mueble</title>
     </head>
     <body>
-        <?php include_once '../gui/header.php'; ?>
+        <?php include_once '../gui/header.html'; ?>
 
         <div class="container">
             <p></p>
@@ -63,9 +64,14 @@ BDConexion::getInstancia()->begin_transaction();
                         </div>
                     <?php } ?>
                     <hr />
+                     <a href="muebles.php">
+                        <button type="button" class="btn btn-primary">
+                            <span class="oi oi-account-logout"></span> Atrás
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
-        <?php include_once '../gui/footer.php'; ?>
+        <?php include_once '../gui/footer.html'; ?>
     </body>
 </html>

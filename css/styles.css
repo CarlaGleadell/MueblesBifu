@@ -19,7 +19,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #808080; 
+    background-color: #000000; 
     color: white; 
     text-align: center;
     padding: 10px;
@@ -48,5 +48,5 @@
 }
 
 .navbar{
-    background-color:#808080 ;
+    background-color:#000000 ;
 }

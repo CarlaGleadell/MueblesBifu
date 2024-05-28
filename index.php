@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <!-- Enlace al archivo CSS de Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     
-<div class="header"></div>
+<?php include_once './gui/header.html'; ?>
 
 
 <div class="presentacion">
@@ -44,20 +43,10 @@
     </div>
 </div>
 
-<div class="footer"></div>
+<?php include_once './gui/footer.html'; ?>
 
 </body>
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<script>
-  $(document).ready(function () {
-    $('.header').load('./gui/header.html');
-    $('.footer').load('./gui/footer.html');
-  });
-</script>
 
 </html>
