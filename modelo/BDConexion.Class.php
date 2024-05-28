@@ -9,7 +9,7 @@ class BDConexion extends mysqli {
         $this->host = "localhost";
         $this->usuario = "root";
         $this->contrasenia = "123456789";
-        $this->schema = "MueblesBifu";
+        $this->schema = "mueblesbifu";
 
         parent::__construct($this->host, $this->usuario, $this->contrasenia, $this->schema);
 

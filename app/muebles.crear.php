@@ -1,6 +1,6 @@
 <?php
 include_once '../modelo/ColeccionMuebles.php';
-$Cursos = new ColeccionMuebles();
+$Muebles = new ColeccionMuebles();
 ?>
 <html>
     <head>

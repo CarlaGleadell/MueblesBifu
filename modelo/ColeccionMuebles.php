@@ -1,7 +1,8 @@
 <?php
+include_once 'BDColeccionGenerica.Class.php';
 include_once 'Mueble.Class.php';
 
-class ColeccionMuebles{
+class ColeccionMuebles extends BDColeccionGenerica{
 
     private $mueble;
        

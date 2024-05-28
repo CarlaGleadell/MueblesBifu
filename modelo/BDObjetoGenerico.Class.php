@@ -1,53 +1,45 @@
 <?php
-include_once 'BDObjetoGenerico.Class.php';
-class Mueble extends BDObjetoGenerico{
+include_once 'BDModeloGenerico.Class.php';
 
+class BDObjetoGenerico extends BDModeloGenerico {
+    
     protected $id;
-    protected $ancho;
-    protected $largo;
-    protected $medida;
-      
-    function __construct($id = NULL) {
-        parent::__construct($id, "Mueble");
-    }
+    protected $nombre;
 
+    protected $coleccionElementos;
+    
     function getId() {
         return $this->id;
     }
+
 
     function setId($id) {
         $this->id = $id;
     }
 
-    function getAncho() {
-        return $this->ancho;
+    function __construct($id, $nombreTabla) {
+        
+        parent::__construct();
+        $this->id = $id ? : $this->id;
+        $this->query = "SELECT * FROM {$nombreTabla} WHERE id = {$this->id}";
+        
+        $this->datos = BDConexion::getInstancia()->query($this->query);
+        $this->datos = $this->datos->fetch_assoc();
+        
+        foreach($this->datos as $atributo => $valor){
+            $this->{$atributo} = $valor;
+        }
+        
+        unset($this->query);
+        unset($this->datos);
+        
     }
-
-    function setAncho($ancho) {
-        $this->ancho = $ancho;
-    }
-
-    function getLargo() {
-        return $this->largo;
-    }
-
-    function setLargo($largo) {
-        $this->largo = $largo;
-    }
-
-    function getMedida() {
-        return $this->medida;
-    }
-
-    function setMedida($medida) {
-        $this->medida = $medida;
-    }
-
+    
 
     function setColeccionElementos($tablaVinculacion, $tablaElementos, $idObjetoContenedor, $atributoFKElementoColeccion, $claseElementoColeccion) {
 
         $this->coleccionElementos = null;
-      
+
         $this->query = "SELECT TablaElementos.* "
                 . "FROM {$tablaElementos} TablaElementos, {$tablaVinculacion} TablaFK "
                 . "WHERE TablaElementos.id = TablaFK.{$atributoFKElementoColeccion} "
@@ -65,8 +57,12 @@ class Mueble extends BDObjetoGenerico{
         unset($this->datos);
     }
     
+
     function getColeccionElementos() {
         return $this->coleccionElementos;
     }
 
+
+    
+    
 }
