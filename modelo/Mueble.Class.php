@@ -1,14 +1,24 @@
 <?php
-include_once 'BDObjetoGenerico.Class.php';
-class Mueble extends BDObjetoGenerico{
+class Mueble {
 
     protected $id;
     protected $ancho;
     protected $largo;
     protected $medida;
       
-    function __construct($id = NULL) {
-        parent::__construct($id, "Mueble");
+    public function __construct($id, $ancho, $largo, $medida) {
+        $this->id = $id;
+        $this->ancho = $ancho;
+        $this->largo = $largo;
+        $this->medida = $medida;
+    }
+
+    function getId() {
+        return $this->id;
+    }
+
+    function setId($id){
+        $this->id = $id;
     }
 
     function getAncho() {
@@ -33,32 +43,6 @@ class Mueble extends BDObjetoGenerico{
 
     function setMedida($medida) {
         $this->medida = $medida;
-    }
-
-
-    function setColeccionElementos($tablaVinculacion, $tablaElementos, $idObjetoContenedor, $atributoFKElementoColeccion, $claseElementoColeccion) {
-
-        $this->coleccionElementos = null;
-      
-        $this->query = "SELECT TablaElementos.* "
-                . "FROM {$tablaElementos} TablaElementos, {$tablaVinculacion} TablaFK "
-                . "WHERE TablaElementos.id = TablaFK.{$atributoFKElementoColeccion} "
-                . "AND TablaFK.{$idObjetoContenedor} = {$this->id}";
-
-        $this->datos = BDConexion::getInstancia()->query($this->query);
-        if(!$this->datos) {
-            print_r($this->BD->error);
-        }
-        for ($x = 0; $x < $this->datos->num_rows; $x++) {
-            $this->coleccionElementos[] = $this->datos->fetch_object($claseElementoColeccion);
-        }
-
-        unset($this->query);
-        unset($this->datos);
-    }
-    
-    function getColeccionElementos() {
-        return $this->coleccionElementos;
     }
 
 }

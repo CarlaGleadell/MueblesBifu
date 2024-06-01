@@ -1,6 +1,7 @@
 <?php
-include_once '../modelo/ColeccionMuebles.php';
-$ColeccionMuebles = new ColeccionMuebles();
+include_once '../modelo/MuebleMapper.php';
+$muebleMapper = new MuebleMapper();
+$muebles= $muebleMapper->getColeccionMuebles('mueble');
 ?>
 
 <!DOCTYPE html>
@@ -40,18 +41,18 @@ $ColeccionMuebles = new ColeccionMuebles();
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($ColeccionMuebles->getMuebles() as $Mueble) { ?>
+                        <?php foreach ($muebles as $mueble) { ?>
                             <tr>
-                                <td><?= $Mueble->getId(); ?></td>
-                                <td><?= $Mueble->getAncho(); ?></td>
-                                <td><?= $Mueble->getLargo(); ?></td>
+                                <td><?= $mueble->getId(); ?></td>
+                                <td><?= $mueble->getAncho(); ?></td>
+                                <td><?= $mueble->getLargo(); ?></td>
                                 <td style="width: 20%">
-                                    <a title="Modificar" href="mueble.modificar.php?id=<?= $Mueble->getId(); ?>">
+                                    <a title="Modificar" href="mueble.modificar.php?id=<?= $mueble->getId(); ?>">
                                         <button type="button" class="btn btn-outline-warning">
                                             <span class="oi oi-pencil"></span>
                                         </button>
                                     </a>
-                                    <a title="Eliminar" href="mueble.eliminar.php?id=<?= $Mueble->getId(); ?>">
+                                    <a title="Eliminar" href="mueble.eliminar.php?id=<?= $mueble->getId(); ?>">
                                         <button type="button" class="btn btn-outline-danger">
                                             <span class="oi oi-trash"></span>
                                         </button>
