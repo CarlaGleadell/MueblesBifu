@@ -12,7 +12,6 @@
     
 <?php include_once './gui/header.html'; ?>
 
-
 <div class="presentacion">
     <h1>¡BIENVENIDO/A!</h1>
     <h5>Muebles a medida Bifu</h5>
@@ -42,11 +41,7 @@
         </div>
     </div>
 </div>
-
 <?php include_once './gui/footer.html'; ?>
-
 </body>
-
-
 
 </html>
