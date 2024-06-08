@@ -6,4 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Practico\\Mueblebifu\\' => array($baseDir . '/src'),
+    'Modelo\\' => array($baseDir . '/src/Modelo'),
+    'App\\' => array($baseDir . '/src/App'),
 );

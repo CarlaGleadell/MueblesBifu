@@ -1,26 +1,26 @@
 <?php
-include_once '../modelo/MuebleMapper.php';
+namespace App\Mueble;
 
-// Manejo del formulario de creación
+use Modelo\MuebleMapper;
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $ancho = $_POST['ancho'];
     $largo = $_POST['largo'];
     $muebleMapper = new MuebleMapper();
     $muebleMapper->crearMueble($ancho, $largo);
 
-    // Redirigir después de la creación
-    header("Location: muebles.php");
+    header("Location: /src/App/Mueble/Muebles.php");
     exit;
 }
 ?>
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../lib/bootstrap-4.1.1-dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="../lib/open-iconic-master/font/css/open-iconic-bootstrap.css" />
-    <link rel="stylesheet" href="../css/styles.css">
-    <script type="text/javascript" src="../lib/JQuery/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="../lib/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/lib/bootstrap-4.1.1-dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/lib/open-iconic-master/font/css/open-iconic-bootstrap.css" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <script type="text/javascript" src="/lib/JQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
     <title>Cargar Mueble</title>
 </head>
 <body>
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <button type="submit" class="btn btn-outline-success" style="margin-right: 10px;">
                             <span class="oi oi-check"></span> Confirmar
                         </button>
-                        <a href="muebles.php">
+                        <a href="/src/App/Mueble/Muebles.php">
                             <button type="button" class="btn btn-outline-danger">
                                 <span class="oi oi-x"></span> Cancelar
                             </button>

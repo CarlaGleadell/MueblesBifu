@@ -1,5 +1,20 @@
 {
-    "require-dev": {
-        "squizlabs/php_codesniffer": "^3.10"
-    }
+    "name": "practico/mueblebifu",
+    "type": "proyect",
+    "autoload": {
+        "psr-4": {
+            "Practico\\Mueblebifu\\": "src/", 
+            
+            "App\\": "src/App/",
+            "Modelo\\": "src/Modelo/"
+        }
+    },
+    "authors": [
+        {
+            "name": "emilianojerez",
+            "email": "emilianojerez@gmail.com"
+        }
+    ],
+    "require": {}
+
 }
