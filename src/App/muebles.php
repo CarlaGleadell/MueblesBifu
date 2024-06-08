@@ -1,8 +1,14 @@
 <?php
-include_once '../modelo/MuebleMapper.php';
+
+namespace App;
+
+use Modelo\MuebleMapper;
 $muebleMapper = new MuebleMapper();
 $muebles= $muebleMapper->getColeccionMuebles('mueble');
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="es">
