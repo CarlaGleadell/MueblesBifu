@@ -1,5 +1,7 @@
 <?php
-include_once '../modelo/MuebleMapper.php';
+namespace App\Mueble;
+
+use Modelo\MuebleMapper;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];
