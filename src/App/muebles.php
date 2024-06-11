@@ -1,11 +1,8 @@
 <?php
-
-namespace App;
-
+require_once __DIR__ . '/../../vendor/autoload.php';
 use Modelo\MuebleMapper;
 $muebleMapper = new MuebleMapper();
-$muebles= $muebleMapper->getColeccionMuebles('mueble');
-
+$muebles = $muebleMapper->getColeccionMuebles('mueble');
 ?>
 
 
@@ -14,15 +11,15 @@ $muebles= $muebleMapper->getColeccionMuebles('mueble');
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../lib/bootstrap-4.1.1-dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../lib/open-iconic-master/font/css/open-iconic-bootstrap.css" />
-    <script type="text/javascript" src="../lib/JQuery/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="../lib/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>        
+    <link rel="stylesheet" href="../../lib/bootstrap-4.1.1-dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../lib/open-iconic-master/font/css/open-iconic-bootstrap.css" />
+    <script type="text/javascript" src="../../lib/JQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="../../lib/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
     <title>Muebles</title>
 </head>
 <body>
-    <?php include_once '../gui/header.html'; ?>
+    <?php include_once '../../gui/header.html'; ?>
 
     <div class="container">
         <div class="card">
@@ -31,7 +28,7 @@ $muebles= $muebleMapper->getColeccionMuebles('mueble');
             </div>
             <div class="card-body">
                 <p>
-                    <a href="muebles.crear.php">
+                    <a href="Mueble/crear.php">
                         <button type="button" class="btn btn-success">
                             <span class="oi oi-plus"></span> Nuevo mueble
                         </button>
@@ -53,12 +50,12 @@ $muebles= $muebleMapper->getColeccionMuebles('mueble');
                                 <td><?= $mueble->getAncho(); ?></td>
                                 <td><?= $mueble->getLargo(); ?></td>
                                 <td style="width: 20%">
-                                    <a title="Modificar" href="mueble.modificar.php?id=<?= $mueble->getId(); ?>">
+                                    <a title="Modificar" href="Mueble/modificar.php?id=<?= $mueble->getId(); ?>">
                                         <button type="button" class="btn btn-outline-warning">
                                             <span class="oi oi-pencil"></span>
                                         </button>
                                     </a>
-                                    <a title="Eliminar" href="mueble.eliminar.php?id=<?= $mueble->getId(); ?>">
+                                    <a title="Eliminar" href="Mueble/eliminar.php?id=<?= $mueble->getId(); ?>">
                                         <button type="button" class="btn btn-outline-danger">
                                             <span class="oi oi-trash"></span>
                                         </button>
@@ -72,6 +69,6 @@ $muebles= $muebleMapper->getColeccionMuebles('mueble');
         </div>
     </div>
     
-    <?php include_once '../gui/footer.html'; ?>
+    <?php include_once '../../gui/footer.html'; ?>
 </body>
 </html>

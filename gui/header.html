@@ -1,27 +1,52 @@
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="logo-container">
-        <a class="navbar-brand" href="#">
-            <img src="/mueblesbifu/img/mueblesbifu.png" alt="Logo de MUEBLES BIFU" class="logo-img">
-        </a>        
-    </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="./lib/bootstrap-4.1.1-dist/css/bootstrap.css">
+    <style>
+        .active {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="logo-container">
+            <a class="navbar-brand" href="#">
+                <img src="/mueblesbifu/img/mueblesbifu.png" alt="Logo de MUEBLES BIFU" class="logo-img">
+            </a>        
+        </div>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" id="link-inicio" href="/mueblesbifu/index.php">Inicio</a>
+                </li>            
+                <li class="nav-item">
+                    <a class="nav-link" id="link-muebles" href="/mueblesbifu/src/App/muebles.php">Muebles</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-            <li class="nav-item">
-                <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'index.php') ? 'active' : ''; ?>" href="<?php echo (basename($_SERVER['PHP_SELF']) == 'index.php') ? '#' : '../index.php'; ?>">Inicio</a>
-            </li>            
-            
-            <li class="nav-item">
-                <a class="nav-link <?php echo ($_SERVER['PHP_SELF'] == '/mueblesbifu/app/muebles.php') ? 'active' : ''; ?>" href="<?php echo ($_SERVER['PHP_SELF'] == '/mueblesbifu/app/muebles.php') ? '#' : '/mueblesbifu/app/muebles.php'; ?>">Muebles</a>
-            </li>
-            
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var path = window.location.pathname;
+            var linkInicio = document.getElementById('link-inicio');
+            var linkMuebles = document.getElementById('link-muebles');
 
-            </li>
-        </ul>
-    </div>
-</nav>
+            if (path === '/mueblesbifu/index.php' || path === '/mueblesbifu/index.html') {
+                linkInicio.classList.add('active');
+            } else if (path === '/mueblesbifu/src/App/Mueble/muebles.php') {
+                linkMuebles.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

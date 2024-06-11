@@ -1,4 +1,6 @@
 <?php
+namespace Modelo;
+
 class Mueble {
 
     protected $id;

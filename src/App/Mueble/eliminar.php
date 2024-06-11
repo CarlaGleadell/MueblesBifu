@@ -1,7 +1,6 @@
 <?php
-
 namespace App\Mueble;
-
+require_once __DIR__ . '/../../../vendor/autoload.php';
 use Modelo\MuebleMapper;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -9,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $muebleMapper = new MuebleMapper();
     $muebleMapper->eliminarMueble($id);
 
-    header("Location: muebles.php");
+    header("Location: ../muebles.php");
     exit;
 }
 
@@ -24,15 +23,15 @@ if ($Mueble === null) {
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../lib/bootstrap-4.1.1-dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="../lib/open-iconic-master/font/css/open-iconic-bootstrap.css" />
-    <link rel="stylesheet" href="../css/styles.css">
-    <script type="text/javascript" src="../lib/JQuery/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="../lib/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../../lib/bootstrap-4.1.1-dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../../../lib/open-iconic-master/font/css/open-iconic-bootstrap.css" />
+    <link rel="stylesheet" href="../../../css/styles.css">
+    <script type="text/javascript" src="../../../lib/JQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="../../../lib/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
     <title>Eliminar mueble</title>
 </head>
 <body>
-    <?php include_once '../gui/header.html'; ?>
+    <?php include_once '../../../gui/header.html'; ?>
     <div class="container">
         <form action="" method="post">
             <div class="card">
@@ -50,13 +49,13 @@ if ($Mueble === null) {
                     <button type="submit" class="btn btn-outline-success">
                         <span class="oi oi-check"></span> Sí, deseo eliminar
                     </button>
-                    <a href="muebles.php" class="btn btn-outline-danger">
+                    <a href="../muebles.php" class="btn btn-outline-danger">
                         <span class="oi oi-x"></span> NO (Salir de esta pantalla)
                     </a>
                 </div>
             </div>
         </form>
     </div>
-    <?php include_once '../gui/footer.html'; ?>
+    <?php include_once '../../../gui/footer.html'; ?>
 </body>
 </html>

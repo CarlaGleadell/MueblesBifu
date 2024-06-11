@@ -15,10 +15,6 @@ class ComposerStaticInit0ae1576e556ebadd2933ecd2483a4b26
         array (
             'Modelo\\' => 7,
         ),
-        'A' => 
-        array (
-            'App\\' => 4,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -29,10 +25,6 @@ class ComposerStaticInit0ae1576e556ebadd2933ecd2483a4b26
         'Modelo\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Modelo',
-        ),
-        'App\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/App',
         ),
     );
 

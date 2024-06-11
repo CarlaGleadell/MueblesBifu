@@ -1,5 +1,4 @@
 <?php
-
 namespace Modelo;
 
 class MuebleMapper {

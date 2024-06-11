@@ -1,20 +1,20 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => 'a3f9b96d88df77dfc58208c0dbe9c482c6f04f9e',
-        'type' => 'library',
+        'name' => 'practico/mueblebifu',
+        'pretty_version' => 'dev-1.1.2-namespaces',
+        'version' => 'dev-1.1.2-namespaces',
+        'reference' => 'b14268a47f649cc8b31fb35e4c281cb961ef9591',
+        'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => 'a3f9b96d88df77dfc58208c0dbe9c482c6f04f9e',
-            'type' => 'library',
+        'practico/mueblebifu' => array(
+            'pretty_version' => 'dev-1.1.2-namespaces',
+            'version' => 'dev-1.1.2-namespaces',
+            'reference' => 'b14268a47f649cc8b31fb35e4c281cb961ef9591',
+            'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,

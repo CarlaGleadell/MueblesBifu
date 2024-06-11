@@ -1,18 +1,16 @@
 {
     "name": "practico/mueblebifu",
-    "type": "proyect",
+    "type": "project",
     "autoload": {
-        "psr-4": {
-            "Practico\\Mueblebifu\\": "src/", 
-            
-            "App\\": "src/App/",
+        "psr-4": {     
+            "Practico\\Mueblebifu\\": "src/",        
             "Modelo\\": "src/Modelo/"
         }
     },
     "authors": [
         {
-            "name": "emilianojerez",
-            "email": "emilianojerez@gmail.com"
+            "name": "carlagleadell",
+            "email": "carlagleadell@gmail.com"
         }
     ],
     "require": {}

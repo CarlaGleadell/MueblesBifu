@@ -1,6 +1,6 @@
 <?php
 namespace App\Mueble;
-
+require_once __DIR__ . '/../../../vendor/autoload.php';
 use Modelo\MuebleMapper;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $muebleMapper = new MuebleMapper();
     $muebleMapper->modificarMueble($id, $ancho, $largo);
 
-    header("Location: muebles.php");
+    header("Location: ../muebles.php");
     exit;
 }
 
@@ -22,15 +22,15 @@ $Mueble = $muebleMapper->buscarMueble($id);
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../lib/bootstrap-4.1.1-dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="../lib/open-iconic-master/font/css/open-iconic-bootstrap.css" />
-    <link rel="stylesheet" href="../css/styles.css">
-    <script type="text/javascript" src="../lib/JQuery/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="../lib/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../../lib/bootstrap-4.1.1-dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../../../lib/open-iconic-master/font/css/open-iconic-bootstrap.css" />
+    <link rel="stylesheet" href="../../../css/styles.css">
+    <script type="text/javascript" src="../../../lib/JQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="../../../lib/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
     <title>Modificar mueble</title>
 </head>
 <body>
-    <?php include_once '../gui/header.html'; ?>
+    <?php include_once '../../../gui/header.html'; ?>
     <div class="container">
         <form action="" method="post">
             <div class="card">
@@ -56,7 +56,7 @@ $Mueble = $muebleMapper->buscarMueble($id);
                         <button type="submit" class="btn btn-outline-success" style="margin-right: 10px;">
                             <span class="oi oi-check"></span> Confirmar
                         </button>
-                        <a href="muebles.php">
+                        <a href="../muebles.php">
                             <button type="button" class="btn btn-outline-danger">
                                 <span class="oi oi-x"></span> Cancelar
                             </button>
@@ -66,6 +66,6 @@ $Mueble = $muebleMapper->buscarMueble($id);
             </div>
         </form>
     </div>
-    <?php include_once '../gui/footer.html'; ?>
+    <?php include_once '../../../gui/footer.html'; ?>
 </body>
 </html>
