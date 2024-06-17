@@ -11,8 +11,13 @@
         {
             "name": "carlagleadell",
             "email": "carlagleadell@gmail.com"
+        },
+        {
+            "name": "EmilianoJerez",
+            "email": "Emilianojerez@gmail.com"
         }
     ],
-    "require": {}
-
+    "require-dev": {
+        "phpunit/phpunit": "^11.2"
+    }
 }
