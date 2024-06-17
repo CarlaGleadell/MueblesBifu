@@ -1,5 +1,5 @@
 <?php
- 
+
 use PHPUnit\Framework\TestCase;
 use Modelo\MuebleMapper;
 use Modelo\BDConexion;
@@ -11,7 +11,9 @@ class MuebleMapperTest extends TestCase {
 
     protected function setUp(): void {
         // Crear un mock de BDConexion
-        $this->conexionMock = $this->createMock(BDConexion::class);
+        $this->conexionMock = $this->getMockBuilder(BDConexion::class)
+                                   ->disableOriginalConstructor()
+                                   ->getMock();
 
         // Inyectar el mock de BDConexion en MuebleMapper usando el constructor
         $this->muebleMapper = new MuebleMapper($this->conexionMock);
@@ -26,7 +28,7 @@ class MuebleMapperTest extends TestCase {
         $stmtMock = $this->createMock(\mysqli_stmt::class);
         $this->conexionMock->expects($this->once())
                            ->method('prepare')
-                           ->with($this->equalTo('INSERT INTO mueble (ancho, largo, medida) VALUES (?, ?, ?)'))
+                           ->with('INSERT INTO mueble (ancho, largo, medida) VALUES (?, ?, ?)')
                            ->willReturn($stmtMock);
         
         $stmtMock->expects($this->once())

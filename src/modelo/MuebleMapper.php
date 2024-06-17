@@ -6,13 +6,18 @@ class MuebleMapper {
     private $query;
     private $datos;
     private $tablaBD = "mueble";
-    private $nombreClase;
+    private $conexion;
+
+    // Añadimos un constructor que acepte la conexión como parámetro
+    public function __construct($conexion) {
+        $this->conexion = $conexion;
+    }
 
     function getColeccionMuebles($tablaBD) {
         $this->query = "SELECT * FROM {$tablaBD}";
-        $this->datos = BDConexion::getInstancia()->query($this->query);
+        $this->datos = $this->conexion->query($this->query);
         if(!$this->datos) {
-            print_r(BDConexion::getInstancia()->error);
+            print_r($this->conexion->error);
         }
         
         $coleccionMuebles = array(); 
@@ -27,32 +32,31 @@ class MuebleMapper {
         return $coleccionMuebles; 
     }
 
-
     function crearMueble($ancho, $largo) {
         $medida = $ancho * $largo;
         $query = "INSERT INTO mueble (ancho, largo, medida) VALUES (?, ?, ?)";
-        $stmt = BDConexion::getInstancia()->prepare($query);
+        $stmt = $this->conexion->prepare($query);
         $stmt->bind_param("ddi", $ancho, $largo, $medida);
 
-        BDConexion::getInstancia()->autocommit(false);
-        BDConexion::getInstancia()->begin_transaction();
+        $this->conexion->autocommit(false);
+        $this->conexion->begin_transaction();
 
         if (!$stmt->execute()) {
-            BDConexion::getInstancia()->rollback();
-            die(BDConexion::getInstancia()->errno);
+            $this->conexion->rollback();
+            die($this->conexion->errno);
         }
 
-        BDConexion::getInstancia()->commit();
-        BDConexion::getInstancia()->autocommit(true);
+        $this->conexion->commit();
+        $this->conexion->autocommit(true);
     }
 
     function buscarMueble($id) {
         $query = "SELECT * FROM {$this->tablaBD} WHERE id = ?";
-        $stmt = BDConexion::getInstancia()->prepare($query);
+        $stmt = $this->conexion->prepare($query);
         $stmt->bind_param("i", $id);
 
         if (!$stmt->execute()) {
-            die(BDConexion::getInstancia()->errno);
+            die($this->conexion->errno);
         }
 
         $result = $stmt->get_result();
@@ -69,37 +73,37 @@ class MuebleMapper {
 
     function eliminarMueble($id) {
         $query = "DELETE FROM {$this->tablaBD} WHERE id = ?";
-        $stmt = BDConexion::getInstancia()->prepare($query);
+        $stmt = $this->conexion->prepare($query);
         $stmt->bind_param("i", $id);
 
-        BDConexion::getInstancia()->autocommit(false);
-        BDConexion::getInstancia()->begin_transaction();
+        $this->conexion->autocommit(false);
+        $this->conexion->begin_transaction();
 
         if (!$stmt->execute()) {
-            BDConexion::getInstancia()->rollback();
-            die(BDConexion::getInstancia()->errno);
+            $this->conexion->rollback();
+            die($this->conexion->errno);
         }
 
-        BDConexion::getInstancia()->commit();
-        BDConexion::getInstancia()->autocommit(true);
+        $this->conexion->commit();
+        $this->conexion->autocommit(true);
     }
 
     function modificarMueble($id, $ancho, $largo) {
         $medida = $ancho * $largo;
         $query = "UPDATE mueble SET ancho = ?, largo = ?, medida = ? WHERE id = ?";
-        $stmt = BDConexion::getInstancia()->prepare($query);
+        $stmt = $this->conexion->prepare($query);
         $stmt->bind_param("ddii", $ancho, $largo, $medida, $id);
 
-        BDConexion::getInstancia()->autocommit(false);
-        BDConexion::getInstancia()->begin_transaction();
+        $this->conexion->autocommit(false);
+        $this->conexion->begin_transaction();
 
         if (!$stmt->execute()) {
-            BDConexion::getInstancia()->rollback();
-            die(BDConexion::getInstancia()->errno);
+            $this->conexion->rollback();
+            die($this->conexion->errno);
         }
 
-        BDConexion::getInstancia()->commit();
-        BDConexion::getInstancia()->autocommit(true);
+        $this->conexion->commit();
+        $this->conexion->autocommit(true);
     }
 }
 ?>
