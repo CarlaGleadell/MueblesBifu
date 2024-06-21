@@ -1,8 +1,12 @@
 <?php
+namespace TestMapper;
 
-use PHPUnit\Framework\TestCase;
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use PDOException;
 use Modelo\MuebleMapper;
 use Modelo\BDConexion;
+use PHPUnit\Framework\TestCase;
 
 class MuebleMapperTest extends TestCase {
 
@@ -10,12 +14,10 @@ class MuebleMapperTest extends TestCase {
     private $conexionMock;
 
     protected function setUp(): void {
-        // Crear un mock de BDConexion
         $this->conexionMock = $this->getMockBuilder(BDConexion::class)
                                    ->disableOriginalConstructor()
                                    ->getMock();
 
-        // Inyectar el mock de BDConexion en MuebleMapper usando el constructor
         $this->muebleMapper = new MuebleMapper($this->conexionMock);
     }
 
@@ -24,7 +26,6 @@ class MuebleMapperTest extends TestCase {
         $largo = 20;
         $medida = $ancho * $largo;
 
-        // Configurar el mock para las interacciones esperadas
         $stmtMock = $this->createMock(\mysqli_stmt::class);
         $this->conexionMock->expects($this->once())
                            ->method('prepare')
@@ -39,10 +40,8 @@ class MuebleMapperTest extends TestCase {
                  ->method('execute')
                  ->willReturn(true);
 
-        // Llamar al método que queremos probar
         $this->muebleMapper->crearMueble($ancho, $largo);
         
-        // Agregar una aserción dummy para evitar pruebas arriesgadas
         $this->assertTrue(true);
     }
 }

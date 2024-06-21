@@ -8,7 +8,6 @@ class MuebleMapper {
     private $tablaBD = "mueble";
     private $conexion;
 
-    // Añadimos un constructor que acepte la conexión como parámetro
     public function __construct($conexion) {
         $this->conexion = $conexion;
     }

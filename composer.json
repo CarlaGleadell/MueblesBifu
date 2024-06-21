@@ -4,7 +4,8 @@
     "autoload": {
         "psr-4": {     
             "Practico\\Mueblebifu\\": "src/",        
-            "Modelo\\": "src/Modelo/"
+            "Modelo\\": "src/Modelo/",
+            "TestMapper\\": "tests/"
         }
     },
     "authors": [
@@ -19,5 +20,8 @@
     ],
     "require-dev": {
         "phpunit/phpunit": "^11.2"
-    }
+    },
+    "scripts": {
+        "test": "phpunit"
+    } 
 }
