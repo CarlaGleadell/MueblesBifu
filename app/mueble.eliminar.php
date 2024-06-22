@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $muebleMapper = new MuebleMapper();
     $muebleMapper->eliminarMueble($id);
 
-    header("Location: muebles.php");
+    header("Location: ../index.php");
     exit;
 }
 
@@ -47,7 +47,7 @@ if ($Mueble === null) {
                     <button type="submit" class="btn btn-outline-success">
                         <span class="oi oi-check"></span> Sí, deseo eliminar
                     </button>
-                    <a href="muebles.php" class="btn btn-outline-danger">
+                    <a href="../index.php" class="btn btn-outline-danger">
                         <span class="oi oi-x"></span> NO (Salir de esta pantalla)
                     </a>
                 </div>

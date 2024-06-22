@@ -1,15 +1,13 @@
 <?php
 include_once '../modelo/MuebleMapper.php';
 
-// Manejo del formulario de creación
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $ancho = $_POST['ancho'];
     $largo = $_POST['largo'];
     $muebleMapper = new MuebleMapper();
     $muebleMapper->crearMueble($ancho, $largo);
 
-    // Redirigir después de la creación
-    header("Location: muebles.php");
+    header("Location: ../index.php");
     exit;
 }
 ?>
@@ -47,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <button type="submit" class="btn btn-outline-success" style="margin-right: 10px;">
                             <span class="oi oi-check"></span> Confirmar
                         </button>
-                        <a href="muebles.php">
+                        <a href="../index.php">
                             <button type="button" class="btn btn-outline-danger">
                                 <span class="oi oi-x"></span> Cancelar
                             </button>

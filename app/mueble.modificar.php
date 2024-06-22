@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $muebleMapper = new MuebleMapper();
     $muebleMapper->modificarMueble($id, $ancho, $largo);
 
-    header("Location: muebles.php");
+    header("Location: ../index.php");
     exit;
 }
 
@@ -54,7 +54,7 @@ $Mueble = $muebleMapper->buscarMueble($id);
                         <button type="submit" class="btn btn-outline-success" style="margin-right: 10px;">
                             <span class="oi oi-check"></span> Confirmar
                         </button>
-                        <a href="muebles.php">
+                        <a href="../index.php">
                             <button type="button" class="btn btn-outline-danger">
                                 <span class="oi oi-x"></span> Cancelar
                             </button>
