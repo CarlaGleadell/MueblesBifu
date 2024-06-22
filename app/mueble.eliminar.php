@@ -29,7 +29,6 @@ if ($Mueble === null) {
     <title>Eliminar mueble</title>
 </head>
 <body>
-    <?php include_once '../gui/header.html'; ?>
     <div class="container">
         <form action="" method="post">
             <div class="card">
@@ -54,6 +53,5 @@ if ($Mueble === null) {
             </div>
         </form>
     </div>
-    <?php include_once '../gui/footer.html'; ?>
 </body>
 </html>

@@ -22,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Cargar Mueble</title>
 </head>
 <body>
-    <?php include_once '../gui/header.html'; ?>
     <div class="container">
         <form action="" method="post">
             <div class="card">
@@ -55,6 +54,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </form>
     </div>
-    <?php include_once '../gui/footer.html'; ?>
 </body>
 </html>

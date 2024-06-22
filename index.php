@@ -16,8 +16,7 @@ $muebles= $muebleMapper->getColeccionMuebles('mueble');
     <title>Muebles</title>
 </head>
 <body>
-    <?php include_once './gui/header.html'; ?>
-
+    
     <div class="container">
         <div class="card">
             <div class="card-header">
@@ -66,6 +65,5 @@ $muebles= $muebleMapper->getColeccionMuebles('mueble');
         </div>
     </div>
     
-    <?php include_once './gui/footer.html'; ?>
 </body>
 </html>

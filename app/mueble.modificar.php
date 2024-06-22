@@ -28,7 +28,6 @@ $Mueble = $muebleMapper->buscarMueble($id);
     <title>Modificar mueble</title>
 </head>
 <body>
-    <?php include_once '../gui/header.html'; ?>
     <div class="container">
         <form action="" method="post">
             <div class="card">
@@ -64,6 +63,5 @@ $Mueble = $muebleMapper->buscarMueble($id);
             </div>
         </form>
     </div>
-    <?php include_once '../gui/footer.html'; ?>
 </body>
 </html>
