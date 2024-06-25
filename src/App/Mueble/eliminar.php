@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $muebleMapper = new MuebleMapper();
     $muebleMapper->eliminarMueble($id);
 
-    header("Location: ../muebles.php");
+    header("Location: ../../../index.php?mensaje=Se eliminó exitosamente el mueble con el ID N° $id");
     exit;
 }
 
@@ -47,10 +47,10 @@ if ($Mueble === null) {
                 <div class="card-footer">
                     <input type="hidden" name="id" class="form-control" id="id" value="<?= $Mueble->getId(); ?>" >
                     <button type="submit" class="btn btn-outline-success">
-                        <span class="oi oi-check"></span> Sí, deseo eliminar
+                        <span class="oi oi-check"></span> Confirmar
                     </button>
-                    <a href="../muebles.php" class="btn btn-outline-danger">
-                        <span class="oi oi-x"></span> NO (Salir de esta pantalla)
+                    <a href="../../../index.php" class="btn btn-outline-danger">
+                        <span class="oi oi-x"></span> Cancelar (volver a pantalla anterior)
                     </a>
                 </div>
             </div>

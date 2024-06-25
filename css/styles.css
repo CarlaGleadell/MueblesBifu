@@ -24,15 +24,19 @@
     text-align: center;
     padding: 10px;
 }
+.active {
+    font-weight: bold;
+}
 
 .logo-container {
     display: flex;
-    align-items: center;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
 }
 
 .logo-img {
-    max-height: 40px; 
-    margin-right: 10px; 
+    max-height: 40px;
 }
 
 

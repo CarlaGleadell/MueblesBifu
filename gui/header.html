@@ -18,35 +18,7 @@
                 <img src="/mueblesbifu/img/mueblesbifu.png" alt="Logo de MUEBLES BIFU" class="logo-img">
             </a>        
         </div>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" id="link-inicio" href="/mueblesbifu/index.php">Inicio</a>
-                </li>            
-                <li class="nav-item">
-                    <a class="nav-link" id="link-muebles" href="/mueblesbifu/src/App/muebles.php">Muebles</a>
-                </li>
-            </ul>
-        </div>
     </nav>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var path = window.location.pathname;
-            var linkInicio = document.getElementById('link-inicio');
-            var linkMuebles = document.getElementById('link-muebles');
-
-            if (path === '/mueblesbifu/index.php' || path === '/mueblesbifu/index.html') {
-                linkInicio.classList.add('active');
-            } else if (path === '/mueblesbifu/src/App/Mueble/muebles.php') {
-                linkMuebles.classList.add('active');
-            }
-        });
-    </script>
 </body>
 </html>

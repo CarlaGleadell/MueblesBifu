@@ -33,18 +33,23 @@ class MuebleMapper {
         $query = "INSERT INTO mueble (ancho, largo, medida) VALUES (?, ?, ?)";
         $stmt = BDConexion::getInstancia()->prepare($query);
         $stmt->bind_param("ddi", $ancho, $largo, $medida);
-
+    
         BDConexion::getInstancia()->autocommit(false);
         BDConexion::getInstancia()->begin_transaction();
-
+    
         if (!$stmt->execute()) {
             BDConexion::getInstancia()->rollback();
             die(BDConexion::getInstancia()->errno);
         }
-
+    
+        $id_mueble = $stmt->insert_id;
+    
         BDConexion::getInstancia()->commit();
         BDConexion::getInstancia()->autocommit(true);
+    
+        return $id_mueble; 
     }
+    
 
     function buscarMueble($id) {
         $query = "SELECT * FROM {$this->tablaBD} WHERE id = ?";

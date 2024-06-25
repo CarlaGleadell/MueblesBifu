@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $muebleMapper = new MuebleMapper();
     $muebleMapper->modificarMueble($id, $ancho, $largo);
 
-    header("Location: ../muebles.php");
+    header("Location: ../../../index.php?mensaje=Se modificó exitosamente el mueble con el ID N° $id");
     exit;
 }
 
@@ -36,7 +36,7 @@ $Mueble = $muebleMapper->buscarMueble($id);
             <div class="card">
                 <div class="card-header">
                     <div style="background-color: rgba(255, 255, 255, 0.5); text-align: center; padding: 20px;">
-                        <h3>Mueble <?= $Mueble->getId(); ?></h3>
+                        <h3>Modificar datos del mueble N°  <?= $Mueble->getId(); ?></h3>
                     </div>
                 </div>
                 <div class="card-body" style="position: relative;">
@@ -56,9 +56,9 @@ $Mueble = $muebleMapper->buscarMueble($id);
                         <button type="submit" class="btn btn-outline-success" style="margin-right: 10px;">
                             <span class="oi oi-check"></span> Confirmar
                         </button>
-                        <a href="../muebles.php">
+                        <a href="../../../index.php">
                             <button type="button" class="btn btn-outline-danger">
-                                <span class="oi oi-x"></span> Cancelar
+                                <span class="oi oi-x"></span> Cancelar (volver a pantalla anterior)
                             </button>
                         </a>
                     </div> 

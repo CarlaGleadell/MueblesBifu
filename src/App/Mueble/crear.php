@@ -7,9 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $ancho = $_POST['ancho'];
     $largo = $_POST['largo'];
     $muebleMapper = new MuebleMapper();
-    $muebleMapper->crearMueble($ancho, $largo);
+    $id_mueble = $muebleMapper->crearMueble($ancho, $largo);
 
-    header("Location: ../muebles.php");
+    header("Location: ../../../index.php?mensaje=Se agregó exitosamente el mueble con el ID N° $id_mueble");
     exit;
 }
 ?>
@@ -47,9 +47,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <button type="submit" class="btn btn-outline-success" style="margin-right: 10px;">
                             <span class="oi oi-check"></span> Confirmar
                         </button>
-                        <a href="../muebles.php">
+                        <a href="../../../index.php">
                             <button type="button" class="btn btn-outline-danger">
-                                <span class="oi oi-x"></span> Cancelar
+                                <span class="oi oi-x"></span> Cancelar (volver a pantalla anterior)
                             </button>
                         </a>
                     </div>
